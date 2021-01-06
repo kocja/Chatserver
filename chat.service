@@ -1,0 +1,13 @@
+[Unit]
+Description=chat
+
+[Service]
+WorkingDirectory=/opt/chatserver
+ExecStart=/usr/bin/dotnet run --configuration Release
+Restart=always
+RestartSec=10
+SyslogIdentifier=chat
+User=www-data
+
+[Install]
+WantedBy=multi-user.target
