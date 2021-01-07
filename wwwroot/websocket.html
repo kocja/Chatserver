@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WebSocket Test</title>
+</head>
+
+<body>
+
+    <script>
+        var exampleSocket = new WebSocket("wss://chat.humbapa.ch/ws");
+        exampleSocket.onerror = function (event) {
+            console.log("WebSocket Error:")
+            console.log(event);
+        }
+        exampleSocket.onmessage = function (event) {
+            console.log("Neue WebSocket Message:")
+            console.log(event.data);
+        }
+        exampleSocket.onopen = function (event) {
+            // Sende eine Nachricht an den Server, der Server wird diese danach einfach an alle verbundenen Clients zurückschicken (Echo).
+            exampleSocket.send("Hello World");
+        }
+
+        function reqListener () {
+            console.log(this.responseText);
+        }
+
+        var oReq = new XMLHttpRequest();
+        oReq.addEventListener("load", reqListener);
+        oReq.open("GET", "https://chat.humbapa.ch/api/Messages");
+        oReq.send();
+    </script>
+
+</body>
+
+</html>

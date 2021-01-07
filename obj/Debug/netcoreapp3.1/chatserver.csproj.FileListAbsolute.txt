@@ -1,0 +1,140 @@
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\chatserver.exe
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\chatserver.deps.json
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\chatserver.runtimeconfig.json
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\chatserver.runtimeconfig.dev.json
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\chatserver.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\chatserver.pdb
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\chatserver.xml
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Sqlite.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\System.Net.WebSockets.WebSocketProtocol.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\runtimes\linux-armel\native\libe_sqlite3.so
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libe_sqlite3.so
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\obj\Debug\netcoreapp3.1\chatserver.csprojAssemblyReference.cache
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\obj\Debug\netcoreapp3.1\chatserver.AssemblyInfoInputs.cache
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\obj\Debug\netcoreapp3.1\chatserver.AssemblyInfo.cs
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\obj\Debug\netcoreapp3.1\chatserver.csproj.CoreCompileInputs.cache
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\obj\Debug\netcoreapp3.1\chatserver.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\obj\Debug\netcoreapp3.1\chatserver.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\obj\Debug\netcoreapp3.1\staticwebassets\chatserver.StaticWebAssets.Manifest.cache
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\obj\Debug\netcoreapp3.1\staticwebassets\chatserver.StaticWebAssets.xml
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\obj\Debug\netcoreapp3.1\chatserver.RazorTargetAssemblyInfo.cache
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\obj\Debug\netcoreapp3.1\chatserver.csproj.CopyComplete
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\obj\Debug\netcoreapp3.1\chatserver.dll
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\obj\Debug\netcoreapp3.1\chatserver.xml
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\obj\Debug\netcoreapp3.1\chatserver.pdb
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\obj\Debug\netcoreapp3.1\chatserver.genruntimeconfig.cache
+C:\Users\Koç Jasmin SECO\Desktop\Chat App\github\chatserver\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\chatserver.exe
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\chatserver.deps.json
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\chatserver.runtimeconfig.json
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\chatserver.runtimeconfig.dev.json
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\chatserver.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\chatserver.pdb
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\chatserver.xml
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Sqlite.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\System.Net.WebSockets.WebSocketProtocol.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\runtimes\linux-armel\native\libe_sqlite3.so
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libe_sqlite3.so
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\obj\Debug\netcoreapp3.1\chatserver.csprojAssemblyReference.cache
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\obj\Debug\netcoreapp3.1\chatserver.AssemblyInfoInputs.cache
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\obj\Debug\netcoreapp3.1\chatserver.AssemblyInfo.cs
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\obj\Debug\netcoreapp3.1\chatserver.csproj.CoreCompileInputs.cache
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\obj\Debug\netcoreapp3.1\chatserver.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\obj\Debug\netcoreapp3.1\chatserver.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\obj\Debug\netcoreapp3.1\chatserver.RazorTargetAssemblyInfo.cache
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\obj\Debug\netcoreapp3.1\chatserver.csproj.CopyComplete
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\obj\Debug\netcoreapp3.1\staticwebassets\chatserver.StaticWebAssets.Manifest.cache
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\obj\Debug\netcoreapp3.1\staticwebassets\chatserver.StaticWebAssets.xml
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\obj\Debug\netcoreapp3.1\chatserver.dll
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\obj\Debug\netcoreapp3.1\chatserver.xml
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\obj\Debug\netcoreapp3.1\chatserver.pdb
+C:\Users\Koç Jasmin SECO\Documents\public\0_work\0_projects\7_chatserver\chatserver\obj\Debug\netcoreapp3.1\chatserver.genruntimeconfig.cache

@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>chatserver</name>
+    </assembly>
+    <members>
+        <member name="M:chatserver.Controllers.MessagesController.Get">
+            <summary>
+            Liste aller Nachrichten
+            </summary>
+            <remarks>
+            TODO: Ermöglichen, dass Nachrichten via Timestamp gefiltert werden können
+            </remarks>
+        </member>
+        <member name="M:chatserver.Controllers.MessagesController.Get(System.String)">
+            <summary>
+            Holt eine einzelne Nachricht via id
+            </summary>
+            <remarks>
+            Bei einem Fehler, wird der Status Code 400 mit einer Fehlermeldung zurückgegeben
+            </remarks>
+        </member>
+        <member name="M:chatserver.Controllers.MessagesController.Post(chatserver.Models.Message)">
+            <summary>
+            Speichern einer Nachricht
+            </summary>
+            <remarks>
+            Nur die Nachricht selber und die User-ID muss angegeben werden.
+            Der Timestamp wird auf dem Server erstellt bzw. überschreibt alle übergebenen Werte.
+            Konnte die Nachricht gespeichert werden, wird sie an alle verbundenen WebSocket Clients verschickt (serialisiertes JSON-Object mit action "message_added").
+            </remarks>
+        </member>
+        <member name="M:chatserver.Controllers.UsersController.Get">
+            <summary>
+            Liste aller Benutzer
+            </summary>
+            <remarks>
+            TODO: Filtern nach Status oder last_status_change oder ...
+            </remarks>
+        </member>
+        <member name="M:chatserver.Controllers.UsersController.Get(System.String)">
+            <summary>
+            Holt einen einzelnen Benutzer
+            </summary>
+            <remarks>
+            Bei einem Fehler, wird der Status Code 400 mit einer Fehlermeldung zurückgegeben
+            </remarks>
+        </member>
+        <member name="M:chatserver.Controllers.UsersController.Post(chatserver.Models.User)">
+            <summary>
+            Legt einen neuen Benutzer an
+            </summary>
+            <remarks>
+            Nur der Nickname muss angegeben werden. Ohne status Angabe wird "offline" verwendet.
+            Die 3 Timestamp Felder werden vom Server gesetzt (created, updated, last_status_change).
+            Konnte der Benutzer gespeichert werden, wird er an alle verbundenen WebSocket Clients verschickt (serialisiertes JSON-Object mit action "user_added").
+            </remarks>
+        </member>
+        <member name="M:chatserver.Controllers.UsersController.Put(System.String,chatserver.Models.UserUpdate)">
+            <summary>
+            Die Angaben eines Benutzers verändern
+            </summary>
+            <remarks>
+            Damit können die Angaben eines Benutzers aktualisiert werden, konkret der Nickname, Status, Avatar und die Description.
+            Wird ein Feld ausgelassen (oder hat einen Null-Wert) dann wird das entsprechende Feld nicht aktualisiert.
+            Konnte der Benutzer aktualisiert werden, wird er an alle verbundenen WebSocket Clients verschickt (serialisiertes JSON-Object mit action "user_updated").
+            </remarks>
+        </member>
+        <member name="M:chatserver.Controllers.UsersController.Delete(System.String)">
+            <summary>
+            Löscht einen Benutzer
+            </summary>
+            <remarks>
+            Damit werden auch alle von diesem Benutzer erstellten Nachrichten gelöscht!
+            Konnte der Benutzer gelöscht werden, wird er an alle verbundenen WebSocket Clients verschickt (serialisiertes JSON-Object mit action "user_deleted").
+            </remarks>
+        </member>
+    </members>
+</doc>
