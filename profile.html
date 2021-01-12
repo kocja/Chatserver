@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<script src="main.js"></script>
-<html lang="de" xmlns="http://www.w3.org/1999/html">
+<html lang="de">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link rel="stylesheet" href="main.css">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Poppins:wght@300&display=swap"
       rel="stylesheet">
 <head>
@@ -21,6 +19,56 @@
 
     <style>
 
+        .text-primary {
+            color: grey !important;
+        }
+        body {
+            height: 100vh;
+            font-family: "Poppins", sans-serif;
+        }
+
+        button[type='submit'] {
+            height: 100%;
+        }
+
+        .active img {
+            filter: invert(1);
+        }
+
+        .text-muted img {
+            filter: invert(0.5);
+        }
+
+        .card-header {
+            background-color: antiquewhite;
+        }
+
+        .d-flex.active {
+            background-color: #db915a !important;
+            border: none !important;
+            cursor: pointer;
+        }
+
+        .d-flex.active:hover {
+            background-color: #e7a677 !important;
+            border: none !important;
+            cursor: pointer;
+        }
+
+        .mr-1 {
+            cursor: pointer;
+        }
+
+        .mr-1:hover {
+            background-color: #e7a677 !important;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #e7a677 !important;
+            border: none !important;
+            cursor: pointer;
+        }
     </style>
 
     <title>Chat</title>
@@ -69,37 +117,37 @@
                     <div class="form-group row">
                         <label class="col-sm-3 col-md-2 col-form-label" for="firstname">First name</label>
                         <div class="col-sm-9 col-md-10">
-                            <input class="form-control" id="firstname" name="firstname" type="text" autofocus/>
+                            <input class="form-control" id="firstname" name="firstname" type="text" autofocus />
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-3 col-md-2 col-form-label" for="lastname">Last name</label>
                         <div class="col-sm-9 col-md-10">
-                            <input class="form-control" id="lastname" name="lastname" type="text"/>
+                            <input class="form-control" id="lastname" name="lastname" type="text" />
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-3 col-md-2 col-form-label" for="email">Email</label>
                         <div class="col-sm-9 col-md-10">
-                            <input class="form-control" id="email" name="email" type="email"/>
+                            <input class="form-control" id="email" name="email" type="email" />
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-3 col-md-2 col-form-label" for="zipcode">ZIP Code</label>
                         <div class="col-sm-9 col-md-10">
-                            <input class="form-control" id="zipcode" name="zipcode" type="number"/>
+                            <input class="form-control" id="zipcode" name="zipcode" type="number" />
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-3 col-md-2 col-form-label" for="city">City</label>
                         <div class="col-sm-9 col-md-10">
-                            <input class="form-control" id="city" name="city" type="text"/>
+                            <input class="form-control" id="city" name="city" type="text" />
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-3 col-md-2 col-form-label" for="country">Country</label>
                         <div class="col-sm-9 col-md-10">
-                            <input class="form-control" id="country" name="country" type="text" list="countrylist"/>
+                            <input class="form-control" id="country" name="country" type="text" list="countrylist" />
                             <datalist id="countrylist">
                                 <option>Switzerland</option>
                                 <option>Germany</option>
@@ -115,32 +163,32 @@
                     <div class="form-group row">
                         <label class="col-sm-3 col-md-2 col-form-label" for="nickname">Nickname</label>
                         <div class="col-sm-9 col-md-10">
-                            <input class="form-control" id="nickname" name="nickname" type="text"/>
+                            <input class="form-control" id="nickname" name="nickname" type="text" />
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-3 col-md-2 col-form-label">Avatar</label>
                         <div class="col-sm-9 col-md-10">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" id="avatar1" name="avatar" value="1"/>
+                                <input class="form-check-input" type="radio" id="avatar1" name="avatar" value="1" />
                                 <label class="form-check-label" for="avatar1"
                                 ><img src="images/avatar_icon_1.svg" height="64" width="64" alt="Avatar 1"
                                 /></label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" id="avatar2" name="avatar" value="2"/>
+                                <input class="form-check-input" type="radio" id="avatar2" name="avatar" value="2" />
                                 <label class="form-check-label" for="avatar2"
                                 ><img src="images/avatar_icon_2.svg" height="64" width="64" alt="Avatar 2"
                                 /></label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" id="avatar3" name="avatar" value="3"/>
+                                <input class="form-check-input" type="radio" id="avatar3" name="avatar" value="3" />
                                 <label class="form-check-label" for="avatar3"
                                 ><img src="images/avatar_icon_3.svg" height="64" width="64" alt="Avatar 3"
                                 /></label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" id="avatar4" name="avatar" value="4"/>
+                                <input class="form-check-input" type="radio" id="avatar4" name="avatar" value="4" />
                                 <label class="form-check-label" for="avatar4"
                                 ><img src="images/avatar_icon_4.svg" height="64" width="64" alt="Avatar 4"
                                 /></label>
@@ -150,8 +198,7 @@
                     <div class="form-group row">
                         <label class="col-sm-3 col-md-2 col-form-label" for="profiledescription">Description</label>
                         <div class="col-sm-9 col-md-10">
-                            <textarea class="form-control" id="profiledescription" name="profiledescription"
-                                      rows="3"></textarea>
+                            <textarea class="form-control" id="profiledescription" name="profiledescription" rows="3"></textarea>
                         </div>
                     </div>
                 </div>
@@ -164,8 +211,7 @@
                         <label class="col-sm-3 col-md-2 col-form-label">Background</label>
                         <div class="col-sm-9 col-md-10">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" id="backgroundimage1"
-                                       name="backgroundimage" value="1"/>
+                                <input class="form-check-input" type="radio" id="backgroundimage1" name="backgroundimage" value="1" />
                                 <label class="form-check-label mb-3" for="backgroundimage1"
                                 ><img
                                         class="img-thumbnail"
@@ -181,8 +227,7 @@
                                 /></label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" id="backgroundimage2"
-                                       name="backgroundimage" value="2"/>
+                                <input class="form-check-input" type="radio" id="backgroundimage2" name="backgroundimage" value="2" />
                                 <label class="form-check-label mb-3" for="backgroundimage2"
                                 ><img
                                         class="img-thumbnail"
@@ -199,37 +244,31 @@
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" id="backgroundimage3"
-                                       name="backgroundimage" value="3"/>
+                                <input class="form-check-input" type="radio" id="backgroundimage3" name="backgroundimage" value="3" />
                                 <label class="form-check-label mb-3" for="backgroundimage3"
-                                >
-                                    <picture>
-                                        <source
-                                                srcset="
+                                ><picture>
+                                    <source
+                                            srcset="
                             images/background_3_320.jpg   320w,
                             images/background_3_640.jpg   640w,
                             images/background_3_1280.jpg 1280w,
                             images/background_3_2560.jpg 2560w
                           "
-                                        />
-                                        <img class="img-thumbnail" src="images/background_3_320.jpg" width="320"
-                                             alt="Background 3"/>
-                                    </picture>
+                                    />
+                                    <img class="img-thumbnail" src="images/background_3_320.jpg" width="320" alt="Background 3" />
+                                </picture>
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" id="backgroundimage4"
-                                       name="backgroundimage" value="4"/>
+                                <input class="form-check-input" type="radio" id="backgroundimage4" name="backgroundimage" value="4" />
                                 <label class="form-check-label mb-3" for="backgroundimage4"
-                                >
-                                    <picture>
-                                        <source srcset="images/background_4_320.jpg" media="(max-width: 320px)"/>
-                                        <source srcset="images/background_4_640.jpg" media="(max-width: 640px)"/>
-                                        <source srcset="images/background_4_1280.jpg" media="(max-width: 1280px)"/>
-                                        <source srcset="images/background_4_2560.jpg" media="(max-width: 2560px)"/>
-                                        <img class="img-thumbnail" src="images/background_4_320.jpg" width="320"
-                                             alt="Background 4"/>
-                                    </picture>
+                                ><picture>
+                                    <source srcset="images/background_4_320.jpg" media="(max-width: 320px)" />
+                                    <source srcset="images/background_4_640.jpg" media="(max-width: 640px)" />
+                                    <source srcset="images/background_4_1280.jpg" media="(max-width: 1280px)" />
+                                    <source srcset="images/background_4_2560.jpg" media="(max-width: 2560px)" />
+                                    <img class="img-thumbnail" src="images/background_4_320.jpg" width="320" alt="Background 4" />
+                                </picture>
                                 </label>
                             </div>
                         </div>
@@ -244,5 +283,17 @@
         </form>
     </article>
 </main>
+
+<!-- Bootstrap JavaScript -->
+<script
+        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"
+></script>
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"
+></script>
 </body>
 </html>

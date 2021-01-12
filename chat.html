@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<script src="main.js"></script>
-<html lang="de" xmlns="http://www.w3.org/1999/html">
+<html lang="de">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link rel="stylesheet" href="main.css">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Poppins:wght@300&display=swap"
       rel="stylesheet">
 <head>
@@ -21,6 +19,56 @@
 
     <style>
 
+        .text-primary {
+            color: grey !important;
+        }
+        body {
+            height: 100vh;
+            font-family: "Poppins", sans-serif;
+        }
+
+        button[type='submit'] {
+            height: 100%;
+        }
+
+        .active img {
+            filter: invert(1);
+        }
+
+        .text-muted img {
+            filter: invert(0.5);
+        }
+
+        .card-header {
+            background-color: antiquewhite;
+        }
+
+        .d-flex.active {
+            background-color: #db915a !important;
+            border: none !important;
+            cursor: pointer;
+        }
+
+        .d-flex.active:hover {
+            background-color: #e7a677 !important;
+            border: none !important;
+            cursor: pointer;
+        }
+
+        .mr-1 {
+            cursor: pointer;
+        }
+
+        .mr-1:hover {
+            background-color: #e7a677 !important;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #e7a677 !important;
+            border: none !important;
+            cursor: pointer;
+        }
     </style>
 
     <title>Chat</title>
@@ -121,5 +169,71 @@
 <footer class="navbar navbar-light bg-light">
     <span>Connecting to server...</span>
 </footer>
+
+<!-- Bootstrap JavaScript -->
+<script
+        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"
+></script>
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"
+></script>
+
 </body>
+<!---
+<script>
+    let users = [];
+    let messages = [];
+
+    //const requestsArray = ["https://chat.humbapa.ch/api/Users", "https://chat.humbapa.ch/api/Messages"];
+    const requestsArray = ["http://localhost:5001/api/Users", "http://localhost:5001/api/Messages"];
+
+    Promise.all(requestsArray.map((request) => {
+        return fetch(request).then((response) => {
+            return response.json();
+        }).then((data) => {
+            return data;
+        });
+    })).then((values) => {
+        intiData(values[0], values[1])
+    }).catch(console.error.bind(console));
+
+    function intiData(u, m) {
+        users = u;
+        messages = m;
+        initUsers();
+    }
+
+    function initUsers() {
+        for (let i = 0; i < users.length; i++) {
+            addUser(users[i]);
+        }
+    }
+
+    function addUser(user) {
+        let li = document.createElement("li");
+        li.setAttribute("id", user.id);
+
+        let status = document.createElement();
+        li.appendChild(status);
+
+        let avatar = document.createElement("img");
+        avatar.setAttribute("src", "images/avatar_icon_" + user.avatar + ".svg");
+        avatar.setAttribute("height", "20px");
+        avatar.setAttribute("width", "20px");
+        li.appendChild(avatar);
+
+        let nickname = document.createElement("span");
+        nickname.appendChild(document.createTextNode(user.nickname));
+        li.appendChild(nickname);
+
+        document.getElementById("userList").appendChild(li);
+    }
+</script>
+-->
+
+
 </html>
