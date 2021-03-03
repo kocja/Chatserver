@@ -1,6 +1,7 @@
 let users = [];
 let messages = [];
 
+const storagePath = "/chat/user/local/";
 const requestArray = ["http://localhost:5001/api/Users", "http://localhost:5001/api/Messages"]
 
 function getAll() {
@@ -9,27 +10,42 @@ function getAll() {
             return response.json();
         }).then((data) => {
             return data;
-        })
-    }));
+        });
+    })).then((values) => {
+        initData(values[0], values[1])
+    }).catch(console.error.bind(console))
 }
 
 function initData(users, messages) {
-    users = this.users;
-    messages = this.messages;
+    this.users = users;
+    this.messages = messages;
     initUsers();
     initMessages();
 }
 
-document.getElementById("submit").addEventListener("click", postMessage)
+// document.getElementById("submit").addEventListener("click", postMessage;
 
 const addMessage = (ev) => {
     ev.preventDefault(); // Um das Abschicken des Formulars zu stoppen
     let message = {
-        id: Date.now(),
         message: document.getElementById('message').value,
         date: Date.now(),
-        user: Date.now()
+        user: localStorage.getItem(storagePath + "id")
     }
+    const b = JSON.stringify({
+        'user_id': localStorage.getItem(storagePath + 'id'),
+        message: document.getElementById('message').value
+    });
+    console.log(b);
+    fetch('http://localhost:5001/api/Messages', {
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        method: 'POST',
+        body: b
+    }).then(data => console.log(data));
+
     messages.push(message);
     document.forms[0].reset(); // Ausgefülltes Formular auf default zurücksetzen
 
@@ -39,7 +55,34 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('submit').addEventListener('click', addMessage);
 })
 
-function initUsers() {s
+const addUser = (ev) => {
+    ev.preventDefault(); //Abschicken des Formulars
+    let user = {
+        user: document.getElementById('user').value
+    }
+    const b = JSON.stringify({
+        nickname: document.getElementById('nickname').value
+    })
+
+    fetch('http://localhost:5001/apiUsers', {
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        method: 'POST',
+        body: b
+    }).then(data => console.log(data));
+
+    users.push(user);
+    document.forms[0].reset();
+
+    localStorage.setItem('UserList', JSON.stringify(user));
+}
+document.addEventListener('DOMContentLoaded', ()=> {
+    document.getElementById('login').addEventListener('click', addUser)
+})
+
+function initUsers() {
     for (let i = 0; i < users.length; i++) {
         addUser(users[i])
     }
@@ -58,13 +101,11 @@ function getUsersById(id) {
         }
     }
 
-    const storagePath =  "/chat/user/local/";
+
     return localStorage.getItem(storagePath + "id");
 }
 
 function addMessages(message) {
-
-    let user_id = "";
 
     let section = document.createElement("section");
     section.setAttribute("id", message.id);
@@ -80,9 +121,7 @@ function addMessages(message) {
     document.getElementById("messageList").appendChild(section);
 }
 
-function addUser(user) {
-
-    let user_id = "";
+function addUsers(user) {
 
     let li = document.createElement("li");
     li.setAttribute("id", user.id);
@@ -105,11 +144,12 @@ function addUser(user) {
 }
 
 function setNickname(nickname) {
-    localStorage.setItem("nickname", nickname)
+    console.log("ES FUNKTIONIERT")
+    localStorage.setItem(storagePath + "nickname", nickname)
 }
 
 function getNickname() {
-    return (localStorage.getItem("nickname"));
+    return (localStorage.getItem(storagePath + "nickname"));
 }
 
 function newInput() {
@@ -140,22 +180,24 @@ function putUser(id, nickname) {
 }
 
 function startWebSocket() {
-    const ws = new WebSocket('http://localhost:5001/api/Users')
+    const ws = new WebSocket('ws://localhost:5001/ws');
 
     ws.onerror = function (event) {
         console.error('WebSocket Error', event)
     }
     ws.onmessage = function (event) {
+        console.log('I handle the message:');
         handleMessage(event.data);
-    }
+    };
     ws.onopen = function (event) {
+        document.getElementById('pfooter').innerHTML = "Websocket connected!";
         // Sende eine Nachricht an den Server, der Server wird diese danach einfach an alle verbundenen Clients zurückschicken (Echo).
         //ws.send('Hello World')
-    }
+        // ws.send('I connected to the server');
+    };
     ws.onclose = function (event) {
-        document.getElementById("pfooter").innerHTML = "Not connected!";
-    }
-    document.getElementById("pfooter").innerHTML = "Websocket connected!";
+        document.getElementById('pfooter').innerHTML = "Not connected!";
+    };
 }
 
 
@@ -166,6 +208,13 @@ function updateUser(id) {
 function handleMessage(input) {
     const jsonObject = JSON.parse(input);
     const action = jsonObject.action;
+    switch (action) {
+        case 'message_added':
+            console.log('Message added:');
+            console.log(jsonObject.data);
+            break;
+    }
+
     if (action === "user_updated") {
         updateUser({
             "id": jsonObject.data.id,
