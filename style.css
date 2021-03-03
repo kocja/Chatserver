@@ -1,0 +1,110 @@
+@import "https://fonts.googleapis.com/css2?family=Montserrat&display=swap";
+
+
+.text-primary {
+    color: grey !important;
+}
+
+body {
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+}
+
+button[type='submit'] {
+    height: 100%;
+}
+
+.active img {
+    filter: invert(1);
+}
+
+.text-muted img {
+    filter: invert(0.5);
+}
+
+.card-header {
+    background-color: antiquewhite;
+}
+
+.d-flex.active {
+    background-color: #db915a !important;
+    border: none !important;
+    cursor: pointer;
+}
+
+.d-flex.active:hover {
+    background-color: #e7a677 !important;
+    border: none !important;
+    cursor: pointer;
+}
+
+
+.col-sm-10.col-md-8.col-lg-6.col-xl-4 {
+    padding: 5em;
+}
+
+.text-primary {
+    color: grey !important;
+}
+body {
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+}
+
+button[type='submit'] {
+    height: 100%;
+}
+
+.active img {
+    filter: invert(1);
+}
+
+.text-muted img {
+    filter: invert(0.5);
+}
+
+.card-header {
+    background-color: antiquewhite;
+}
+
+.d-flex.active {
+    background-color: #db915a !important;
+    border: none !important;
+    cursor: pointer;
+}
+
+.d-flex.active:hover {
+    background-color: #e7a677 !important;
+    border: none !important;
+    cursor: pointer;
+}
+
+.mr-1 {
+    cursor: pointer;
+}
+
+.mr-1:hover {
+    background-color: #e7a677 !important;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #e7a677 !important;
+    border: none !important;
+    cursor: pointer;
+}
+
+.mr-1 {
+    cursor: pointer;
+}
+
+.mr-1:hover {
+    background-color: #e7a677 !important;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #e7a677 !important;
+    border: none !important;
+    cursor: pointer;
+}
