@@ -14,6 +14,14 @@ function getAll() {
         initData(values[0], values[1])
     }).catch(console.error.bind(console))
 }
+getAll();
+
+function initUsers() {
+    fetch(users_endpoint)
+        .then(response => response.json())
+        .then(users => users.forEach(addUser))
+        .catch(console.error.bind(console))
+}
 
 function initData(users, messages) {
     this.messages = messages;
@@ -147,9 +155,6 @@ function startWebSocket() {
         if (element) {
             element.innerHTML = 'Websocket connected!';
         }
-        // Sende eine Nachricht an den Server, der Server wird diese danach einfach an alle verbundenen Clients zurückschicken (Echo).
-        //ws.send('Hello World')
-        // ws.send('I connected to the server');
     };
     ws.onclose = function (event) {
         const element = document.getElementById('pfooter');
@@ -159,10 +164,11 @@ function startWebSocket() {
     };
 }
 
-
+/*
 function updateUser(id) {
     id = getUsersById(id);
 }
+*/
 
 function handleMessage(input) {
     const jsonObject = JSON.parse(input);
@@ -172,23 +178,75 @@ function handleMessage(input) {
             console.log('Message added:');
             console.log(jsonObject.data);
             break;
-    }
-
-    if (action === "user_updated") {
-        updateUser({
-            "id": jsonObject.data.id,
-            "status": jsonObject.data.status,
-            "avatar": jsonObject.data.avatar,
-            "nickname": jsonObject.data.nickname
-        });
-    } else if (action === "user_deleted") {
-        console.log("user_deleted noch nicht implementiert")
-    } else {
-        console.error("websocket - unbekannte Action")
+        case 'user_updated':
+            updateUser({
+                "id": jsonObject.data.id,
+                "status": jsonObject.data.status,
+                "avatar": jsonObject.data.avatar,
+                "nickname": jsonObject.data.nickname
+            });
+            break;
+        case 'user_deleted':
+            console.error("websocket - unbekannte Action")
+            break;
     }
 }
-
 startWebSocket();
 
+
+
+
+function addUser(user) {
+    const li = document.createElement("li");
+    li.setAttribute("id", user.id);
+    if (localStorage.getItem('user-id') === user.id) {
+        li.className = 'list-group-item d-flex active';
+    } else {
+        li.className = 'list-group-item d-flex';
+    }
+
+//    const status = document.createElement();
+//    li.appendChild(status);
+
+    const avatar = document.createElement("img")
+    avatar.setAttribute("src", "images/avatar_icon_" + user.avatar + ".svg");
+    avatar.setAttribute("height", "24px");
+    avatar.setAttribute("width", "24px");
+    avatar.setAttribute('alt', 'Avatar' + user.avatar);
+    avatar.className = 'mr-1';
+    li.appendChild(avatar);
+
+    const nickname = document.createElement("span");
+    nickname.appendChild(document.createTextNode(user.nickname));
+    li.appendChild(nickname);
+
+    document.getElementById("userList").appendChild(li);
+}
+
+/*
+function addUser(ev) {
+    ev.preventDefault(); //Abschicken des Formulars
+    const user = {
+        user: document.getElementById('nickname').value
+    }
+    const b = JSON.stringify({
+        nickname: document.getElementById('nickname').value
+    })
+
+    fetch('http://localhost:5001/api/Users', {
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        method: 'POST',
+        body: b
+    }).then(data => console.log(data));
+
+    users.push(user);
+    document.forms[0].reset();
+
+    localStorage.setItem('UserList', JSON.stringify(user));
+}
+*/
 
 
