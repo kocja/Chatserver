@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="de">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Poppins:wght@300&display=swap"
+      rel="stylesheet">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- Bootstrap CSS -->
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+            integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+            crossorigin="anonymous"
+    />
+
+    <style>
+
+        .text-primary {
+            color: grey !important;
+        }
+        body {
+            height: 100vh;
+            font-family: "Poppins", sans-serif;
+        }
+
+        button[type='submit'] {
+            height: 100%;
+        }
+
+        .active img {
+            filter: invert(1);
+        }
+
+        .text-muted img {
+            filter: invert(0.5);
+        }
+
+        .card-header {
+            background-color: antiquewhite;
+        }
+
+        .d-flex.active {
+            background-color: #db915a !important;
+            border: none !important;
+            cursor: pointer;
+        }
+
+        .d-flex.active:hover {
+            background-color: #e7a677 !important;
+            border: none !important;
+            cursor: pointer;
+        }
+
+        .mr-1 {
+            cursor: pointer;
+        }
+
+        .mr-1:hover {
+            background-color: #e7a677 !important;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #e7a677 !important;
+            border: none !important;
+            cursor: pointer;
+        }
+    </style>
+
+    <title>Chat</title>
+</head>
+
+<body class="d-flex flex-column justify-content-between">
+<nav class="navbar navbar-expand-sm navbar-light bg-light justify-content-between">
+    <a class="navbar-brand" href="#">Chat</a>
+    <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+    >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Login</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="chat.html">Chat <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="profile.html">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<main class="container">
+    <article>
+        <h1 class="mt-4">Chat</h1>
+        <p class="lead">
+            <b>Chat</b> (von
+            <a href="https://de.wikipedia.org/wiki/Englische_Sprache">englisch</a>
+            <i>to chat</i>
+            [tʃæt] ‚plaudern‘, ‚sich unterhalten‘; auch
+            <b>Online-Chat</b>) bezeichnet die elektronische <a href="https://de.wikipedia.org/wiki/Kommunikation">Kommunikation</a> in
+            Echtzeit, meist über das <a href="https://de.wikipedia.org/wiki/Internet">Internet</a>. Die erste Ausprägung des Online-Chats bot
+            ab 1980 <a href="https://de.wikipedia.org/wiki/Compuserve">Compuserve</a> in Form des „CB-Simulators“. Auch das
+            <a href="https://de.wikipedia.org/wiki/Usenet">Usenet</a> und im weiteren Sinn der
+            <a href="https://de.wikipedia.org/wiki/CB-Funk">CB-Funk</a> hatten Chat-Funktionen.
+        </p>
+
+        <nav class="card mb-4">
+            <div class="card-header">Inhaltsverzeichnis</div>
+            <ol class="card-body mb-0">
+                <li>
+                    <a href="#Arten"> Arten </a>
+                </li>
+                <li>
+                    <a href="#Chatiquette"> Chatiquette </a>
+                </li>
+                <li>
+                    <a href="#Chatter-Treffen"> Chatter-Treffen </a>
+                </li>
+                <li>
+                    <a href="#Gefahren_und_Probleme"> Gefahren und Probleme </a>
+                    <ol>
+                        <li>
+                            <a href="#Chatsucht"> Chatsucht </a>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#Kommunikation_im_Chat"> Kommunikation im Chat </a>
+                </li>
+                <li>
+                    <a href="#Sprache_im_Chat"> Sprache im Chat </a>
+                </li>
+                <li>
+                    <a href="#Fremdsprachen_lernen_im_Chat"> Fremdsprachen lernen im Chat </a>
+                </li>
+                <li>
+                    <a href="#Software_und_Protokolle"> Software und Protokolle </a>
+                </li>
+                <li>
+                    <a href="#Einzelnachweise"> Einzelnachweise </a>
+                </li>
+            </ol>
+        </nav>
+
+        <section>
+            <h2 id="Arten">Arten</h2>
+            <p>
+                Die ursprünglichste Form des Internet-Chats ist der reine Textchat, bei dem nur
+                <a href="https://de.wikipedia.org/wiki/Zeichensatz">Zeichen</a> ausgetauscht werden können. Mittlerweile kann – je nach System –
+                eine Ton- und/oder Videospur dazukommen bzw. den Textchat ersetzen. Man spricht dann von „
+                <a href="https://de.wikipedia.org/wiki/IP-Telefonie">Audio-</a>“ bzw. „
+                <a href="https://de.wikipedia.org/wiki/Videokonferenz">Videochat</a>“.
+            </p>
+            <p>Heute werden, technisch gesehen, hauptsächlich drei Chatformen unterschieden:</p>
+            <ul>
+                <li>
+                    Der <a href="https://de.wikipedia.org/wiki/Internet_Relay_Chat">Internet Relay Chat</a> (IRC) wurde in den 1980er Jahren von
+                    dem finnischen Studenten Jarkko Oikarinen entwickelt. Er benötigt eigene
+                    <a href="https://de.wikipedia.org/wiki/IRC-Server">Chat-Server</a>; diese Server sind meistens untereinander vernetzt. Zudem
+                    wird eine <a href="https://de.wikipedia.org/wiki/IRC-Client">Client-Software</a> benötigt, die entweder auf den Rechnern der
+                    chattenden Personen installiert ist oder aber über einen
+                    <a href="https://de.wikipedia.org/wiki/Webbrowser">Browser</a> gestartet wird, z.&nbsp;B. ein
+                    <a href="https://de.wikipedia.org/wiki/Java-Technologie">Java</a>-Web-Client. Für die Steuerung des Clients werden spezielle
+                    IRC-Kommandos verwendet.
+                </li>
+                <li>
+                    Der <a href="https://de.wikipedia.org/wiki/Webchat">Webchat</a>, bei dem man direkt im Webbrowser chatten kann, es wird meist
+                    keine weitere Software benötigt. Webchats sind meistens auf die jeweilige Webseite beschränkt. Diese Form wird auch in
+                    <a href="https://de.wikipedia.org/w/index.php?title=Live-Support-System&amp;action=edit&amp;redlink=1"
+                    >Live-Support-Systemen</a
+                    >
+                    genutzt, die zum Teil weitere Dienste wie
+                    <a href="https://de.wikipedia.org/wiki/IP-Telefonie">IP-Telefonie</a> oder Funktionen zur
+                    <a href="https://de.wikipedia.org/wiki/Fernwartung">Fernwartung</a> beinhalten.
+                </li>
+                <li>
+                    Bei <a href="https://de.wikipedia.org/wiki/Instant_Messaging">Instant Messaging</a> wird der Chat in der Regel, nicht in einem
+                    öffentlichen <i>Chatraum</i> geführt, sondern nur zwischen denjenigen, die sich mittels der entsprechenden Software
+                    untereinander als mögliche Gesprächspartner identifiziert haben. Jedoch sind auch öffentliche
+                    <a href="https://de.wikipedia.org/wiki/Extensible_Messaging_and_Presence_Protocol">XMPP</a>
+                    Chaträume weit verbreitet, welche wie IRC's genutzt werden.
+                </li>
+            </ul>
+            <p>
+                <i>IRC</i> und <i>Instant Messaging</i> beinhaltet meistens weitere Funktionalitäten wie das Erstellen von Gesprächsprotokollen
+                („chat logs“) oder das Übermitteln von <a href="https://de.wikipedia.org/wiki/Datei">Dateien</a> und
+                <a href="https://de.wikipedia.org/wiki/Hyperlink">Hyperlinks</a>. Allen drei Varianten ist gemeinsam, dass meistens nicht unter
+                bürgerlichem Namen gechattet wird, sondern unter einem Pseudonym (
+                <a href="https://de.wikipedia.org/wiki/Nickname">Nickname</a>). Im <i>IRC</i> und in <i>Web-Chats</i> ist der Austausch meistens
+                in Chaträumen bzw. Channels organisiert, die sich speziellen Themen widmen. Chats mit mehr als zwei Chattern finden in
+                Chaträumen statt. Nach einer Erhebung des
+                <a href="https://de.wikipedia.org/wiki/Statistisches_Bundesamt">Statistischen Bundesamtes</a>
+                nutzten 2009 46&nbsp;Prozent der 10- bis 15-jährigen Internetnutzer Chats,
+                <a href="https://de.wikipedia.org/wiki/Blog">Blogs</a> oder
+                <a href="https://de.wikipedia.org/wiki/Internetforum">Internetforen</a> als Kommunikationsmittel. Bei Studenten und Schülern
+                beträgt dieser Anteil 89&nbsp;Prozent.
+                <sup id="cite_ref-1">
+                    <a href="#cite_note-1">[1]</a>
+                </sup>
+            </p>
+        </section>
+
+        <section>
+            <h2 id="Chatiquette">Chatiquette</h2>
+            <p>
+                Zu beachten ist die <a href="https://de.wikipedia.org/wiki/Netiquette#Chat">Chatiquette</a>. Hierbei handelt es sich um
+                spezielle Regeln für die <a href="https://de.wikipedia.org/wiki/Umgangsformen">Umgangsformen</a> in einem Chat. Um
+                Missverständnisse aufgrund der fehlenden visuellen Kommunikation zwischen den Teilnehmern zu vermeiden, sollten diese Regeln
+                eingehalten werden.
+            </p>
+            <p>
+                Allgemeine Regeln für die Umgangsformen im Internet beschreibt die
+                <a href="https://de.wikipedia.org/wiki/Netiquette">Netiquette</a>.
+            </p>
+        </section>
+
+        <section>
+            <h2 id="Chatter-Treffen">Chatter-Treffen</h2>
+            <p>
+                Da man sich in einem Chat nur „virtuell“ unterhalten kann, werden von manchen Chat-Communitys oder auch Privatpersonen
+                sogenannte Chatter-Treffen (CT) organisiert. Hier treffen sich die Chatter dann auch im wirklichen Leben, um sich auszutauschen
+                oder organisatorische Dinge zu besprechen. Treffen, bei denen sich Mitglieder eines Chat-Kanals (z.&nbsp;B. IRC-Channel)
+                treffen, nennt man Channelparty.
+            </p>
+            <p>
+                Die ersten Chatter-Treffen Europas fanden schon 1987 statt und nannten sich <i>Relay-Partys</i> entsprechend dem Vorläufer von
+                <i>IRC</i>, <a href="https://de.wikipedia.org/wiki/Bitnet_Relay">Bitnet Relay</a>.
+            </p>
+        </section>
+
+        <section>
+            <h2 id="Gefahren_und_Probleme">Gefahren und Probleme</h2>
+            <p>
+                Es liegt in der Natur der Sache, dass man sich in Chats nie sicher sein kann, ob das Gegenüber auch wirklich das ist, wofür er
+                oder sie sich ausgibt. Dies gilt auch für Chats, in denen die Benutzer Steckbriefe besitzen. Scheinbar persönliche Informationen
+                und Fotos brauchen nicht unbedingt mit der realen Person übereinzustimmen, da die Registrierungsdaten üblicherweise nicht
+                verifiziert werden. Chatter, die sich für etwas ausgeben, was sie nicht sind, nennt man
+                <a href="https://de.wikipedia.org/wiki/Fake">Fakes</a>. So kann es zum Beispiel vorkommen, dass man mit einem Mann spricht, der
+                sich als eine Frau ausgibt etc. Selbst wenn eine
+                <a href="https://de.wikipedia.org/wiki/Verifizierung">Verifizierung</a> stattfindet, braucht diese nicht zuverlässig zu sein.
+                Gerade Kinder und Jugendliche sollten auf diesen möglichen Unterschied zwischen „Online-Persönlichkeit“ und Realität hingewiesen
+                werden, insbesondere in Bezug auf die Gefahr durch Sexualstraftäter („Online predator“).
+                <sup id="cite_ref-2">
+                    <a href="#cite_note-2">[2]</a>
+                </sup>
+            </p>
+            <h3 id="Chatsucht">Chatsucht</h3>
+            <p>
+                Der Spaß am Chatten kann für Kinder und Jugendliche – aber auch für Erwachsene – zu einer
+                <a href="https://de.wikipedia.org/wiki/Internetabh%C3%A4ngigkeit">Chatsucht</a> werden. Dies wird häufig bei Personen
+                beobachtet, die gerade begonnen haben zu chatten. Vor allem bei Personen mit einem gestörten sozialen Umfeld kann sich dieses
+                Problem verfestigen. Die Chatsucht kann in Verbindung mit einer Onlinesucht auftreten. Begünstigt wird dies dadurch, dass man
+                sich anderen Teilnehmern gegenüber als Persönlichkeit ausgeben kann, die man im tatsächlichen Leben nicht ist. Dies kann zu
+                <a href="https://de.wikipedia.org/wiki/Realit%C3%A4tsverlust">Realitätsverlust</a> führen, da man sich auch außerhalb des
+                Chatrooms für die im Chat erstellte Person halten kann.
+            </p>
+        </section>
+
+        <section>
+            <h2 id="Kommunikation_im_Chat">Kommunikation im Chat</h2>
+            <p>
+                Die Kommunikation im Chat findet fast zeitgleich (
+                <i> <a href="https://de.wikipedia.org/wiki/Synchrone_Kommunikation">synchron</a> </i>) statt und nicht über eine lange Zeit
+                versetzt ( <i> <a href="https://de.wikipedia.org/wiki/Asynchrone_Kommunikation">asynchron</a> </i>), wie z.&nbsp;B. in der
+                <a href="https://de.wikipedia.org/wiki/E-Mail">E-Mail</a>-Kommunikation. Die teilnehmenden Chatter tippen ihre Gesprächsbeiträge
+                in ein Eingabefeld und schicken sie durch eine Eingabe ab. Ab dem Zeitpunkt seiner Zustellung an die Adressatenrechner ist der
+                Beitrag für alle im selben Chatraum präsenten Chat-Beteiligten fast sofort sichtbar; bis zum Zeitpunkt seiner Verschickung ist
+                bei den meisten Chat-Systemen aber die Aktivität des Tippens für die Partner ersichtlich. Ferner können sich Beiträge
+                überlappen. Wegen der kommunikativen Rahmenbedingungen ist trotz der <i>synchronen</i> Präsenz der Kommunikationsbeteiligten vor
+                ihren Rechnern keine <i>simultane</i> Verarbeitung von Verhaltensäußerungen zur Laufzeit ihrer Hervorbringung möglich; in diesem
+                Punkt unterscheidet sich die Chat-Kommunikation ganz erheblich vom mündlichen Gespräch (vgl. z.&nbsp;B. Beißwenger 2007). Die
+                Kommunikation im Chat teilt somit – trotz ihrer medial schriftlichen Realisierung – mehr Merkmale mit dem mündlichen Gespräch
+                als mit Texten, ihre charakteristischen Unterschiede zum mündlichen Gespräch bestehen aber in mehr als lediglich der Tatsache,
+                dass Chat-Beiträge im Gegensatz zu Gesprächsbeiträgen getippt werden.
+            </p>
+        </section>
+
+        <section>
+            <h2 id="Sprache_im_Chat">Sprache im Chat</h2>
+            <p>
+                Im Chat steht eine korrekte Verwendung der Sprache auf syntaktischer und orthographischer Ebene nicht im Vordergrund. Anakoluthe
+                (Konstruktionsbrüche), Aposiopesen (Satzbrüche) sowie umgangssprachliche Kontraktionen, Ellipsen, Interjektionen, dialektale und
+                soziolektale Ausdrücke verleihen der Sprache im Chat einen Slang-Charakter. Tippfehler und grammatikalische Fehler sind häufig,
+                Satzzeichen spielen fast keine Rolle, und oft wird konsequent klein geschrieben. „Das Ökonomieprinzip steht […] eindeutig als
+                Maxime der Äußerungsproduktion im Vordergrund.“ (Geers 1999, 5). Die fehlenden parasprachlichen Mittel werden durch
+                <a href="https://de.wikipedia.org/wiki/Emoticons">Emoticons</a> (z.&nbsp;B.&nbsp;:-),&nbsp;;-) oder&nbsp;:-o) und
+                <a href="https://de.wikipedia.org/wiki/Liste_von_Abk%C3%BCrzungen_(Netzjargon)">Akronyme</a>
+                (z.&nbsp;B. lol =
+                <b>l</b>augh(ing) <b>o</b>ut <b>l</b>oud; dt. „Lautes Lachen“) oder Abkürzungen ersetzt.
+            </p>
+        </section>
+
+        <section>
+            <h2 id="Fremdsprachen_lernen_im_Chat">Fremdsprachen lernen im Chat</h2>
+            <p>
+                Möchte man als Lernender das Medium Chat nutzen, um seine Fremdsprachenkenntnisse zu verbessern, sollte man aufgrund der
+                besonderen Kommunikations- und Sprachmerkmale von Chats Räume wählen, die extra dafür eingerichtet wurden, sogenannte Lernchats
+                oder didaktische Chat-Räume.
+            </p>
+        </section>
+
+        <section>
+            <h2 id="Software_und_Protokolle">Software und Protokolle</h2>
+            <p>Bekannte Chatsoftware und Protokolle sind:</p>
+            <ul>
+                <li>
+                    <a href="https://de.wikipedia.org/wiki/Facebook_Messenger">Facebook Messenger</a>
+                </li>
+                <li>
+                    <a href="https://de.wikipedia.org/wiki/Google_Hangouts">Google Hangouts</a>
+                </li>
+                <li><a href="https://de.wikipedia.org/wiki/ICQ">ICQ</a> (OSCAR)</li>
+                <li>
+                    <a href="https://de.wikipedia.org/wiki/IMessage">iMessage</a>
+                </li>
+                <li><a href="https://de.wikipedia.org/wiki/Internet_Relay_Chat">Internet Relay Chat</a> (IRC)</li>
+                <li>
+                    <a href="https://de.wikipedia.org/wiki/Skype">Skype</a>
+                </li>
+                <li><a href="https://de.wikipedia.org/wiki/TeamSpeak">TeamSpeak</a> (TS)</li>
+                <li>
+                    <a href="https://de.wikipedia.org/wiki/Telegram_Messenger">Telegram Messenger</a>
+                </li>
+                <li>
+                    <a href="https://de.wikipedia.org/wiki/WhatsApp">WhatsApp</a>
+                </li>
+                <li>
+                    <a href="https://de.wikipedia.org/wiki/Extensible_Messaging_and_Presence_Protocol">XMPP</a>
+                </li>
+                <li>
+                    <a href="https://de.wikipedia.org/wiki/Cryptocat">Cryptocat</a> –
+                    <a href="https://de.wikipedia.org/wiki/Freie_Software">freie Software</a> für
+                    <a href="https://de.wikipedia.org/wiki/Ende-zu-Ende-Verschl%C3%BCsselung">Ende-zu-Ende-verschlüsselten</a>
+                    Onlinechat
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 id="Einzelnachweise">Einzelnachweise</h2>
+            <ol>
+                <li id="cite_note-1">
+                    <a href="#cite_ref-1">↑ <span class="sr-only">Hochspringen</span></a>
+                    <a
+                            href="https://www.destatis.de/DE/Publikationen/Thematisch/EinkommenKonsumLebensbedingungen/PrivateHaushalte/PrivateHaushalteIKT2150400127004.pdf?__blob=publicationFile"
+                    >
+                        <i>Private Haushalte in der Informationsgesellschaft (IKT).</i>
+                    </a>
+                    In: <i>Fachserie 15 Reihe 4.</i> Statistisches Bundesamt, 2009, abgerufen am 16.&nbsp;Februar 2010 (PDF).
+                </li>
+                <li id="cite_note-2">
+                    <a href="#cite_ref-2">↑ <span class="sr-only">Hochspringen</span></a> Janis Wolak,
+                    <a href="https://de.wikipedia.org/wiki/David_Finkelhor">David Finkelhor</a>, Kimberly J. Mitchell, Michele L. Ybarra:
+                    <a href="http://www.unh.edu/news/cj_nr/2008/feb/lw18internet.cfm">
+                        <i>Online „predators“ and their victims: Myths, realities, and implications for prevention and treatment. </i> </a
+                    >, In: <a href="https://de.wikipedia.org/wiki/American_Psychologist">American Psychologist</a>, 2008, Bd. 63, Nr. 2 (Feb–Mär);
+                    Crimes Against Children Research Center, University of New Hampshire
+                </li>
+            </ol>
+        </section>
+    </article>
+</main>
+
+<!-- Bootstrap JavaScript -->
+<script
+        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"
+></script>
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"
+></script>
+</body>
+</html>

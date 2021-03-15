@@ -1,4 +1,3 @@
-let users = [];
 let messages = [];
 
 const storagePath = "/chat/user/local/";
@@ -17,7 +16,6 @@ function getAll() {
 }
 
 function initData(users, messages) {
-    this.users = users;
     this.messages = messages;
     initUsers();
     initMessages();
@@ -29,7 +27,6 @@ const addMessage = (ev) => {
     ev.preventDefault(); // Um das Abschicken des Formulars zu stoppen
     let message = {
         message: document.getElementById('message').value,
-        date: Date.now(),
         user: localStorage.getItem(storagePath + "id")
     }
     const b = JSON.stringify({
@@ -52,40 +49,18 @@ const addMessage = (ev) => {
     localStorage.setItem('MessageList', JSON.stringify(messages));
 }
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('submit').addEventListener('click', addMessage);
-})
-
-const addUser = (ev) => {
-    ev.preventDefault(); //Abschicken des Formulars
-    let user = {
-        user: document.getElementById('user').value
+    const element = document.getElementById('submit');
+    if (element) {
+        element.addEventListener('click', addMessage);
     }
-    const b = JSON.stringify({
-        nickname: document.getElementById('nickname').value
+});
+
+function startEventListener() {
+    /*
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('login').addEventListener('click', addUser)
     })
-
-    fetch('http://localhost:5001/apiUsers', {
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        method: 'POST',
-        body: b
-    }).then(data => console.log(data));
-
-    users.push(user);
-    document.forms[0].reset();
-
-    localStorage.setItem('UserList', JSON.stringify(user));
-}
-document.addEventListener('DOMContentLoaded', ()=> {
-    document.getElementById('login').addEventListener('click', addUser)
-})
-
-function initUsers() {
-    for (let i = 0; i < users.length; i++) {
-        addUser(users[i])
-    }
+    */
 }
 
 function initMessages() {
@@ -119,28 +94,6 @@ function addMessages(message) {
     messageText.appendChild(document.createTextNode(message.message));
     section.appendChild(messageText);
     document.getElementById("messageList").appendChild(section);
-}
-
-function addUsers(user) {
-
-    let li = document.createElement("li");
-    li.setAttribute("id", user.id);
-
-    let status = document.createElement();
-    li.appendChild(status);
-
-    let avatar = document.createElement("img")
-
-    avatar.setAttribute("src", "img/avatar_icon_" + user.avatar + ".svg");
-    avatar.setAttribute("height", "20px");
-    avatar.setAttribute("width", "20px");
-    li.appendChild(avatar);
-
-    let nickname = document.createElement("span");
-
-    nickname.appendChild(document.createTextNode(user.nickname));
-    li.appendChild(nickname);
-    document.getElementById("userList").appendChild(li);
 }
 
 function setNickname(nickname) {
@@ -190,13 +143,19 @@ function startWebSocket() {
         handleMessage(event.data);
     };
     ws.onopen = function (event) {
-        document.getElementById('pfooter').innerHTML = "Websocket connected!";
+        const element = document.getElementById('pfooter');
+        if (element) {
+            element.innerHTML = 'Websocket connected!';
+        }
         // Sende eine Nachricht an den Server, der Server wird diese danach einfach an alle verbundenen Clients zurückschicken (Echo).
         //ws.send('Hello World')
         // ws.send('I connected to the server');
     };
     ws.onclose = function (event) {
-        document.getElementById('pfooter').innerHTML = "Not connected!";
+        const element = document.getElementById('pfooter');
+        if (element) {
+            element.innerHTML = 'Not connected!';
+        }
     };
 }
 
