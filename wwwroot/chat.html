@@ -6,13 +6,14 @@
 <script type="text/javascript" src="js/chat.js"></script>
 <script type="text/javascript" src="js/users.js"></script>
 <link rel="stylesheet" href="css/style.css">
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Chat</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Chat</title>
 <body class="d-flex flex-column justify-content-between">
 <nav class="navbar navbar-expand-sm navbar-light bg-light justify-content-between">
     <a class="navbar-brand" href="#">Chat</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
@@ -34,30 +35,12 @@
 </nav>
 <main class="container-fluid flex-grow-1 d-flex">
     <article class="flex-grow-1 d-flex flex-column">
-        <div class="flex-grow-1 mt-3 mr-3">
+        <div id="messageList" class="flex-grow-1 mt-3 mr-3">
             <div class="card mb-2">
                 <div class="card-header lead d-flex justify-content-between">
                     <strong>User 2</strong><small class="text-muted">2. Nov 11:50</small>
                 </div>
                 <div class="card-body">First message</div>
-            </div>
-            <div class="card mb-2">
-                <div class="card-header lead d-flex justify-content-between">
-                    <strong>User 2</strong><small class="text-muted">2. Nov 11:51</small>
-                </div>
-                <div class="card-body">Second message</div>
-            </div>
-            <div class="card mb-2">
-                <div class="card-header lead d-flex justify-content-between text-primary">
-                    <strong>User 1</strong><small class="text-muted">2. Nov 11:55</small>
-                </div>
-                <div class="card-body">Third message</div>
-            </div>
-            <div class="card mb-2">
-                <div class="card-header lead d-flex justify-content-between">
-                    <strong>User 3</strong><small class="text-muted">2. Nov 11:59</small>
-                </div>
-                <div class="card-body">Fourth message</div>
             </div>
         </div>
         <form method="GET" action="chat.html">
@@ -71,23 +54,8 @@
             </div>
         </form>
     </article>
-    <aside class="">
-        <ul id="userList" class="list-group mt-3">
-<!--
-            <li class="list-group-item d-flex">
-                <img class="mr-1" src="../images/avatar_icon_1.svg" height="24" width="24" alt="Avatar 1"/>User 1
-            </li>
-            <li class="list-group-item d-flex active">
-                <img class="mr-1" src="../images/avatar_icon_2.svg" height="24" width="24" alt="Avatar 2"/>User 2
-            </li>
-            <li class="list-group-item d-flex">
-                <img class="mr-1" src="../images/avatar_icon_4.svg" height="24" width="24" alt="Avatar 4"/>User 3
-            </li>
-            <li class="list-group-item d-flex text-muted">
-                <img class="mr-1" src="../images/avatar_icon_1.svg" height="24" width="24" alt="Avatar 1"/>User 4
-            </li>
--->
-        </ul>
+    <aside>
+        <ul id="userList" class="list-group mt-3"></ul>
     </aside>
 </main>
 <footer id="pfooter" class="navbar navbar-light bg-light">

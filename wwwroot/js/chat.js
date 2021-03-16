@@ -1,3 +1,4 @@
+let users = [];
 let messages = [];
 
 const storagePath = "/chat/user/local/";
@@ -14,23 +15,25 @@ function getAll() {
         initData(values[0], values[1])
     }).catch(console.error.bind(console))
 }
+
 getAll();
 
 function initUsers() {
-    fetch(users_endpoint)
-        .then(response => response.json())
-        .then(users => users.forEach(addUser))
-        .catch(console.error.bind(console))
+    users.forEach(addUser);
 }
 
-function initData(users, messages) {
-    this.messages = messages;
+
+function initMessages() {
+    messages.forEach(addMessages)
+}
+
+function initData(_users, _messages) {
+    users = _users;
+    messages = _messages;
     initUsers();
     initMessages();
 }
-
-// document.getElementById("submit").addEventListener("click", postMessage;
-
+/*
 const addMessage = (ev) => {
     ev.preventDefault(); // Um das Abschicken des Formulars zu stoppen
     let message = {
@@ -62,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         element.addEventListener('click', addMessage);
     }
 });
-
+*/
 function startEventListener() {
     /*
     document.addEventListener('DOMContentLoaded', () => {
@@ -71,11 +74,6 @@ function startEventListener() {
     */
 }
 
-function initMessages() {
-    for (let i = 0; i < messages.length; i++) {
-        addMessages(messages[i])
-    }
-}
 
 function getUsersById(id) {
     for (let i = 0; i < users.length; i++) {
@@ -85,23 +83,34 @@ function getUsersById(id) {
     }
 
 
-    return localStorage.getItem(storagePath + "id");
+    return localStorage.getItem(storagePath + 'id');
 }
 
 function addMessages(message) {
 
-    let section = document.createElement("section");
-    section.setAttribute("id", message.id);
+    const box = document.createElement('div');
+    box.setAttribute('id', message.id);
+    box.setAttribute('class', 'card mb-2');
 
-    let userName = document.createElement("span");
+    const header = document.createElement("div");
+    header.setAttribute('class', 'card-header lead d-flex justify-content-between');
+    box.appendChild(header);
+
+    const userName = document.createElement("strong");
     userName.appendChild(document.createTextNode(getUsersById(message.user_id)));
-    console.log(message.user_id)
-    section.appendChild(userName);
+    header.appendChild(userName);
 
-    let messageText = document.createElement("span");
+    const timeStamp = document.createElement("small");
+    timeStamp.appendChild(document.createTextNode(message.timestamp));
+    timeStamp.setAttribute('class', 'text-muted');
+    header.appendChild(timeStamp);
+
+    const messageText = document.createElement("span");
     messageText.appendChild(document.createTextNode(message.message));
-    section.appendChild(messageText);
-    document.getElementById("messageList").appendChild(section);
+    messageText.setAttribute('class', 'card-body')
+    box.appendChild(messageText);
+
+    document.getElementById("messageList").appendChild(box);
 }
 
 function setNickname(nickname) {
@@ -113,14 +122,7 @@ function getNickname() {
     return (localStorage.getItem(storagePath + "nickname"));
 }
 
-function newInput() {
-    let input = document.createElement("input");
-    input.setAttribute("type", "text");
-    input.setAttribute("value", getNickname());
-    document.getElementById("nicknameInput").appendChild(input)
-}
-
-function putUser(id, nickname) {
+/*function putUser(id, nickname) {
     fetch('http://localhost:5001/api/Users' + id, {
         headers: {
             'Accept': 'application/json',
@@ -138,7 +140,7 @@ function putUser(id, nickname) {
         setLocalUser({"id": json["id"], "nickname": nickname});
         loginSuccesfully();
     }).catch(err => console.log("exc", err));
-}
+}*/
 
 function startWebSocket() {
     const ws = new WebSocket('ws://localhost:5001/ws');
@@ -164,11 +166,6 @@ function startWebSocket() {
     };
 }
 
-/*
-function updateUser(id) {
-    id = getUsersById(id);
-}
-*/
 
 function handleMessage(input) {
     const jsonObject = JSON.parse(input);
@@ -191,9 +188,26 @@ function handleMessage(input) {
             break;
     }
 }
+
 startWebSocket();
 
 
+const FILTER_RED = 'invert(11%) sepia(67%) saturate(3947%) hue-rotate(353deg) brightness(94%) contrast(117%)';
+const FILTER_GREEN = 'invert(21%) sepia(88%) saturate(3552%) hue-rotate(96deg) brightness(97%) contrast(103%)';
+const FILTER_ORANGE = 'invert(56%) sepia(25%) saturate(6340%) hue-rotate(1deg) brightness(103%) contrast(105%)';
+
+function get_filter_for_status(status) {
+    switch (status) {
+        case 'online':
+            return FILTER_GREEN;
+        case 'offline':
+            return FILTER_RED;
+        case 'away':
+            return FILTER_ORANGE;
+        default:
+            return '';
+    }
+}
 
 
 function addUser(user) {
@@ -205,14 +219,10 @@ function addUser(user) {
         li.className = 'list-group-item d-flex';
     }
 
-//    const status = document.createElement();
-//    li.appendChild(status);
-
     const avatar = document.createElement("img")
     avatar.setAttribute("src", "images/avatar_icon_" + user.avatar + ".svg");
-    avatar.setAttribute("height", "24px");
-    avatar.setAttribute("width", "24px");
     avatar.setAttribute('alt', 'Avatar' + user.avatar);
+    avatar.setAttribute('style', 'width: 24px; height: 24px; filter: ' + get_filter_for_status(user.status));
     avatar.className = 'mr-1';
     li.appendChild(avatar);
 
