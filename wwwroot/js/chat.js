@@ -192,14 +192,15 @@ function handleMessage(input) {
             });
             break;
         case 'user_updated':
-/*
-            updateUser({
-                id: jsonObject.data.id,
-                status: jsonObject.data.status,
-                avatar: jsonObject.data.avatar,
-                nickname: jsonObject.data.nickname
-            });
-*/
+            // Update username
+            const rootElement = document.getElementById(jsonObject.data.id);
+            const nicknameElement = rootElement.getElementsByTagName('span')[0];
+            nicknameElement.textContent = jsonObject.data.nickname;
+            // Update status
+            const avatarElement = rootElement.getElementsByTagName('img')[0];
+            avatarElement.setAttribute('style', 'width: 24px; height: 24px; filter: ' + get_filter_for_status(jsonObject.data.status));
+            // Update avatar
+            avatarElement.setAttribute("src", "images/avatar_icon_" + jsonObject.data.avatar + ".svg");
             break;
         case 'user_deleted':
             const element = document.getElementById(jsonObject.data.id);
