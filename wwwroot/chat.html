@@ -5,6 +5,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <script type="text/javascript" src="js/chat.js"></script>
 <script type="text/javascript" src="js/users.js"></script>
+<script type="text/javascript" src="js/messages.js"></script>
 <link rel="stylesheet" href="css/style.css">
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -35,21 +36,14 @@
 </nav>
 <main class="container-fluid flex-grow-1 d-flex">
     <article class="flex-grow-1 d-flex flex-column">
-        <div id="messageList" class="flex-grow-1 mt-3 mr-3">
-            <div class="card mb-2">
-                <div class="card-header lead d-flex justify-content-between">
-                    <strong>User 2</strong><small class="text-muted">2. Nov 11:50</small>
-                </div>
-                <div class="card-body">First message</div>
-            </div>
-        </div>
-        <form method="GET" action="chat.html">
+        <div id="messageList" class="flex-grow-1 mt-3 mr-3"></div>
+        <form id='messageForm' action="">
             <div class="row mt-3 mb-3">
                 <div class="col-10">
                     <textarea class="form-control" name="message" id="message" rows="2"></textarea>
                 </div>
                 <div class="col-2">
-                    <button type="button" class="btn btn-primary" id="submit">Send</button>
+                    <button type="submit" class="btn btn-primary" id="submit">Send</button>
                 </div>
             </div>
         </form>
@@ -64,10 +58,30 @@
 <script type="text/javascript">
     const userId = localStorage.getItem('user-id');
     if (userId && userId !== '') {
-        getUser(userId)
+        getUserById(userId)
             .catch(() => window.location.href = 'index.html');
     } else {
         window.location.href = 'index.html';
+    }
+
+    const messagesForm = document.getElementById('messageForm');
+    if (messagesForm) {
+        messagesForm.addEventListener('submit', ev => {
+            ev.preventDefault();
+
+            const textField = document.getElementById('message');
+            const userId = localStorage.getItem('user-id');
+
+            if (textField) {
+                const newMessage = textField.value;
+                if (newMessage) {
+                    createMessage(userId, newMessage)
+                        .then(id => localStorage.setItem('message-id', id))
+                        .then(() => localStorage.setItem('message', newMessage))
+                        .catch(() => console.error('Message couldn\'t be sent.'))
+                }
+            }
+        })
     }
 </script>
 </body>

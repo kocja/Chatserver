@@ -2,26 +2,21 @@ let users = [];
 let messages = [];
 
 const storagePath = "/chat/user/local/";
-const requestArray = ["http://localhost:5001/api/Users", "http://localhost:5001/api/Messages"]
 
 function getAll() {
-    Promise.all(requestArray.map((request) => {
-        return fetch(request).then((response) => {
-            return response.json();
-        }).then((data) => {
-            return data;
-        });
-    })).then((values) => {
+    Promise.all([
+        getAllUsers(),
+        getAllMessages()
+    ]).then((values) => {
         initData(values[0], values[1])
     }).catch(console.error.bind(console))
 }
-
-getAll();
+// Wartet bis die Seite geladen ist, um die Funktion getAll anzuzeigen
+document.addEventListener('DOMContentLoaded', getAll);
 
 function initUsers() {
     users.forEach(addUser);
 }
-
 
 function initMessages() {
     messages.forEach(addMessages)
@@ -30,9 +25,16 @@ function initMessages() {
 function initData(_users, _messages) {
     users = _users;
     messages = _messages;
+    messages.forEach(message => {
+        const date = new Date(message.timestamp);
+        message.time = date.getTime();
+    });
+    // Sort messages by date
+    messages.sort((messageA, messageB) => messageA.time - messageB.time);
     initUsers();
     initMessages();
 }
+
 /*
 const addMessage = (ev) => {
     ev.preventDefault(); // Um das Abschicken des Formulars zu stoppen
@@ -81,11 +83,11 @@ function getUsersById(id) {
             return users[i].nickname;
         }
     }
-
-
     return localStorage.getItem(storagePath + 'id');
 }
 
+
+//Messages auf Chat.html anzeigen
 function addMessages(message) {
 
     const box = document.createElement('div');
@@ -112,6 +114,7 @@ function addMessages(message) {
 
     document.getElementById("messageList").appendChild(box);
 }
+
 
 function setNickname(nickname) {
     console.log("ES FUNKTIONIERT")
@@ -150,6 +153,7 @@ function startWebSocket() {
     }
     ws.onmessage = function (event) {
         console.log('I handle the message:');
+        console.log(event.data);
         handleMessage(event.data);
     };
     ws.onopen = function (event) {
@@ -172,19 +176,37 @@ function handleMessage(input) {
     const action = jsonObject.action;
     switch (action) {
         case 'message_added':
-            console.log('Message added:');
-            console.log(jsonObject.data);
-            break;
-        case 'user_updated':
-            updateUser({
-                "id": jsonObject.data.id,
-                "status": jsonObject.data.status,
-                "avatar": jsonObject.data.avatar,
-                "nickname": jsonObject.data.nickname
+            addMessages({
+                id: jsonObject.data.id,
+                timestamp: jsonObject.data.timestamp,
+                user_id: jsonObject.data.user_id,
+                message: jsonObject.data.message
             });
             break;
+        case 'user_added':
+            addUser( {
+                id: jsonObject.data.id,
+                status: jsonObject.data.status,
+                avatar: jsonObject.data.avatar,
+                nickname: jsonObject.data.nickname
+            });
+            break;
+        case 'user_updated':
+/*
+            updateUser({
+                id: jsonObject.data.id,
+                status: jsonObject.data.status,
+                avatar: jsonObject.data.avatar,
+                nickname: jsonObject.data.nickname
+            });
+*/
+            break;
         case 'user_deleted':
-            console.error("websocket - unbekannte Action")
+            const element = document.getElementById(jsonObject.data.id);
+            if (element) {
+                element.remove();
+            }
+            // Delete his/hers messages
             break;
     }
 }

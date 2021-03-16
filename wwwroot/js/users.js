@@ -1,29 +1,24 @@
 const users_endpoint = 'http://localhost:5001/api/Users';
 
-function getUser(userId) {
-    return fetch(users_endpoint + '/' + userId)
-        .then(response => response.ok ? response.json() : response.json().then(str => Promise.reject(str)));
+function mapResponseIfNoError(response) {
+    return response.ok ? response.json() : response.json().then(error => Promise.reject(error));
 }
 
-function updateUser(userId, userName) {
-    return fetch(users_endpoint + '/' + userId, {
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            method: 'PUT',
-            body: JSON.stringify({
-                nickname: userName
-            })
-        }
-    ).then(response => response.ok ? response.json() : response.json().then(Promise.reject));
+function getAllUsers() {
+    return fetch(users_endpoint)
+        .then(mapResponseIfNoError);
+}
+
+function getUserById(userId) {
+    return fetch(users_endpoint + '/' + userId)
+        .then(mapResponseIfNoError);
 }
 
 function createUser(nickName) {
     const body = {
-        nickname: nickName
+        nickname: nickName,
+        status: 'online'
     };
-
     return fetch(users_endpoint, {
         headers: {
             'Accept': 'application/json',
@@ -32,8 +27,25 @@ function createUser(nickName) {
         method: 'POST',
         body: JSON.stringify(body)
     })
-        .then(response => response.ok ? response.json() : response.json().then(Promise.reject))
+        .then(mapResponseIfNoError)
         .then(user => user.id);
+}
+
+function updateUser(userUpdate) {
+    return fetch(users_endpoint + '/' + userUpdate.id, {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            method: 'PUT',
+            body: JSON.stringify({
+                id: userUpdate.id,
+                status: userUpdate.status,
+                avatar: userUpdate.avatar,
+                nickname: userUpdate.nickname
+            })
+        }
+    ).then(mapResponseIfNoError);
 }
 
 // ==================================================

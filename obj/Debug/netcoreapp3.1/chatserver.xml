@@ -4,6 +4,11 @@
         <name>chatserver</name>
     </assembly>
     <members>
+        <member name="M:chatserver.Controllers.DebugController.Delete(System.String)">
+            <summary>
+            Löscht eine einzelne Nachricht
+            </summary>
+        </member>
         <member name="M:chatserver.Controllers.MessagesController.Get">
             <summary>
             Liste aller Nachrichten
