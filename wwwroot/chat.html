@@ -58,34 +58,5 @@
 <footer id="pfooter" class="navbar navbar-light bg-light">
     <span>Connecting to server...</span>
 </footer>
-<script type="text/javascript">
-    const userId = localStorage.getItem('user-id');
-    if (userId && userId !== '') {
-        getUserById(userId)
-            .catch(() => window.location.href = 'index.html');
-    } else {
-        window.location.href = 'index.html';
-    }
-
-    const messagesForm = document.getElementById('messageForm');
-    if (messagesForm) {
-        messagesForm.addEventListener('submit', ev => {
-            ev.preventDefault();
-
-            const textField = document.getElementById('message');
-            const userId = localStorage.getItem('user-id');
-
-            if (textField) {
-                const newMessage = textField.value;
-                if (newMessage) {
-                    createMessage(userId, newMessage)
-                        .then(id => localStorage.setItem('message-id', id))
-                        .then(() => localStorage.setItem('message', newMessage))
-                        .catch(() => console.error('Message couldn\'t be sent.'))
-                }
-            }
-        })
-    }
-</script>
 </body>
 </html>

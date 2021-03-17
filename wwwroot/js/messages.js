@@ -31,16 +31,3 @@ function getMessageById(messageId) {
     return fetch(messages_endpoint + '/' + messageId)
         .then(mapResponseIfNoError);
 }
-
-//TODO: Debug!
-function deleteMessages() {
-    fetch(messages_endpoint)
-        .then(response => response.json())
-        .then(messages => messages.forEach(message => fetch(messages_endpoint + '/' + message.id, {
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            method: 'DELETE'
-        })))
-}

@@ -1,7 +1,9 @@
 const users_endpoint = 'http://localhost:5001/api/Users';
 
 function mapResponseIfNoError(response) {
-    return response.ok ? response.json() : response.json().then(error => Promise.reject(error));
+    return response.ok
+        ? response.json()
+        : response.json().then(error => Promise.reject(error));
 }
 
 function getAllUsers() {
@@ -10,8 +12,14 @@ function getAllUsers() {
 }
 
 function getUserById(userId) {
-    return fetch(users_endpoint + '/' + userId)
-        .then(mapResponseIfNoError);
+    return userId
+        ? fetch(users_endpoint + '/' + userId)
+            .then(mapResponseIfNoError)
+        : Promise.reject('userId mustn\'t be empty');
+}
+
+function getMessagesByUserId(userId){
+    getUserById(userId)
 }
 
 function createUser(nickName) {
@@ -46,20 +54,4 @@ function updateUser(userUpdate) {
             })
         }
     ).then(mapResponseIfNoError);
-}
-
-// ==================================================
-// Debug only
-// ==================================================
-// Deletes all existing users
-function deleteUsers() {
-    fetch(users_endpoint)
-        .then(response => response.json())
-        .then(users => users.forEach(user => fetch(users_endpoint + '/' + user.id, {
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            method: 'DELETE'
-        })));
 }

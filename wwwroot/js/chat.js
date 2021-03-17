@@ -11,16 +11,40 @@ function getAll() {
         initData(values[0], values[1])
     }).catch(console.error.bind(console))
 }
+
 // Wartet bis die Seite geladen ist, um die Funktion getAll anzuzeigen
-document.addEventListener('DOMContentLoaded', getAll);
+document.addEventListener('DOMContentLoaded', () => {
+    startWebSocket();
+    getAll();
 
-function initUsers() {
-    users.forEach(addUser);
-}
+    const userId = localStorage.getItem('user-id');
+    if (userId && userId !== '') {
+        getUserById(userId)
+            .catch(() => window.location.href = 'index.html');
+    } else {
+        window.location.href = 'index.html';
+    }
 
-function initMessages() {
-    messages.forEach(addMessages)
-}
+    const messagesForm = document.getElementById('messageForm');
+    if (messagesForm) {
+        messagesForm.addEventListener('submit', ev => {
+            ev.preventDefault();
+
+            const textField = document.getElementById('message');
+            const userId = localStorage.getItem('user-id');
+
+            if (textField) {
+                const newMessage = textField.value;
+                if (newMessage) {
+                    createMessage(userId, newMessage)
+                        .then(id => localStorage.setItem('message-id', id))
+                        .then(() => localStorage.setItem('message', newMessage))
+                        .catch(() => console.error('Message couldn\'t be sent.'))
+                }
+            }
+        })
+    }
+});
 
 function initData(_users, _messages) {
     users = _users;
@@ -30,62 +54,25 @@ function initData(_users, _messages) {
         message.time = date.getTime();
     });
     // Sort messages by date
-    messages.sort((messageA, messageB) => messageA.time - messageB.time);
-    initUsers();
-    initMessages();
+    users.forEach(addUser);
+    messages.reverse().forEach(addMessages);
 }
-
-/*
-const addMessage = (ev) => {
-    ev.preventDefault(); // Um das Abschicken des Formulars zu stoppen
-    let message = {
-        message: document.getElementById('message').value,
-        user: localStorage.getItem(storagePath + "id")
-    }
-    const b = JSON.stringify({
-        'user_id': localStorage.getItem(storagePath + 'id'),
-        message: document.getElementById('message').value
-    });
-    console.log(b);
-    fetch('http://localhost:5001/api/Messages', {
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        method: 'POST',
-        body: b
-    }).then(data => console.log(data));
-
-    messages.push(message);
-    document.forms[0].reset(); // Ausgefülltes Formular auf default zurücksetzen
-
-    localStorage.setItem('MessageList', JSON.stringify(messages));
-}
-document.addEventListener('DOMContentLoaded', () => {
-    const element = document.getElementById('submit');
-    if (element) {
-        element.addEventListener('click', addMessage);
-    }
-});
-*/
-function startEventListener() {
-    /*
-    document.addEventListener('DOMContentLoaded', () => {
-        document.getElementById('login').addEventListener('click', addUser)
-    })
-    */
-}
-
 
 function getUsersById(id) {
-    for (let i = 0; i < users.length; i++) {
-        if (users[i].id === id) {
-            return users[i].nickname;
-        }
-    }
-    return localStorage.getItem(storagePath + 'id');
+    return users.find(user => user.id === id).nickname;
 }
 
+function getMessagesByUserId(userId){
+    return messages.filter(message => message.user_id === userId)
+}
+
+//TODO Die Messages müssen jeweils per Id gelöscht werden
+function getMessageByMessages(userId){
+    const userMessages = getMessagesByUserId(userId)
+    /*userMessages.forEach(message => {
+        message.id;
+    });*/
+}
 
 //Messages auf Chat.html anzeigen
 function addMessages(message) {
@@ -115,59 +102,19 @@ function addMessages(message) {
     document.getElementById("messageList").appendChild(box);
 }
 
-
-function setNickname(nickname) {
-    console.log("ES FUNKTIONIERT")
-    localStorage.setItem(storagePath + "nickname", nickname)
+function updateFooter(text) {
+    const element = document.getElementById('pfooter');
+    if (element) {
+        element.textContent = text;
+    }
 }
-
-function getNickname() {
-    return (localStorage.getItem(storagePath + "nickname"));
-}
-
-/*function putUser(id, nickname) {
-    fetch('http://localhost:5001/api/Users' + id, {
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        method: 'PUT',
-        body: JSON.stringify({"nickname": nickname, "status": "online"})
-    }).then(function (response) {
-        if (response.status === 200) {
-            return response.json();
-        } else {
-            console.log("nicht 200")
-        }
-    }).then(function (json) {
-        setLocalUser({"id": json["id"], "nickname": nickname});
-        loginSuccesfully();
-    }).catch(err => console.log("exc", err));
-}*/
 
 function startWebSocket() {
     const ws = new WebSocket('ws://localhost:5001/ws');
-
-    ws.onerror = function (event) {
-        console.error('WebSocket Error', event)
-    }
-    ws.onmessage = function (event) {
-        console.log('I handle the message:');
-        console.log(event.data);
-        handleMessage(event.data);
-    };
-    ws.onopen = function (event) {
-        const element = document.getElementById('pfooter');
-        if (element) {
-            element.innerHTML = 'Websocket connected!';
-        }
-    };
-    ws.onclose = function (event) {
-        const element = document.getElementById('pfooter');
-        if (element) {
-            element.innerHTML = 'Not connected!';
-        }
-    };
+    ws.onerror = event => console.error('WebSocket Error', event);
+    ws.onmessage = event => handleMessage(event.data);
+    ws.onopen = () => updateFooter('Websocket connected!');
+    ws.onclose = () => updateFooter("Not connected!");
 }
 
 
@@ -184,7 +131,7 @@ function handleMessage(input) {
             });
             break;
         case 'user_added':
-            addUser( {
+            addUser({
                 id: jsonObject.data.id,
                 status: jsonObject.data.status,
                 avatar: jsonObject.data.avatar,
@@ -198,40 +145,28 @@ function handleMessage(input) {
             nicknameElement.textContent = jsonObject.data.nickname;
             // Update status
             const avatarElement = rootElement.getElementsByTagName('img')[0];
-            avatarElement.setAttribute('style', 'width: 24px; height: 24px; filter: ' + get_filter_for_status(jsonObject.data.status));
+            avatarElement.setAttribute('style', 'width: 24px; height: 24px; filter: ' + (filtersByStatus[jsonObject.data.status] || ''));
             // Update avatar
             avatarElement.setAttribute("src", "images/avatar_icon_" + jsonObject.data.avatar + ".svg");
             break;
         case 'user_deleted':
             const element = document.getElementById(jsonObject.data.id);
+            const getMessage = getMessagesByUserId(element);
+
             if (element) {
                 element.remove();
+                getMessage.remove();
             }
             // Delete his/hers messages
             break;
     }
 }
 
-startWebSocket();
-
-
-const FILTER_RED = 'invert(11%) sepia(67%) saturate(3947%) hue-rotate(353deg) brightness(94%) contrast(117%)';
-const FILTER_GREEN = 'invert(21%) sepia(88%) saturate(3552%) hue-rotate(96deg) brightness(97%) contrast(103%)';
-const FILTER_ORANGE = 'invert(56%) sepia(25%) saturate(6340%) hue-rotate(1deg) brightness(103%) contrast(105%)';
-
-function get_filter_for_status(status) {
-    switch (status) {
-        case 'online':
-            return FILTER_GREEN;
-        case 'offline':
-            return FILTER_RED;
-        case 'away':
-            return FILTER_ORANGE;
-        default:
-            return '';
-    }
-}
-
+const filtersByStatus = {
+    'online': 'invert(21%) sepia(88%) saturate(3552%) hue-rotate(96deg) brightness(97%) contrast(103%)',
+    'offline': 'invert(11%) sepia(67%) saturate(3947%) hue-rotate(353deg) brightness(94%) contrast(117%)',
+    'away': 'invert(56%) sepia(25%) saturate(6340%) hue-rotate(1deg) brightness(103%) contrast(105%)'
+};
 
 function addUser(user) {
     const li = document.createElement("li");
@@ -245,7 +180,7 @@ function addUser(user) {
     const avatar = document.createElement("img")
     avatar.setAttribute("src", "images/avatar_icon_" + user.avatar + ".svg");
     avatar.setAttribute('alt', 'Avatar' + user.avatar);
-    avatar.setAttribute('style', 'width: 24px; height: 24px; filter: ' + get_filter_for_status(user.status));
+    avatar.setAttribute('style', 'width: 24px; height: 24px; filter: ' + (filtersByStatus[user.status] || ''));
     avatar.className = 'mr-1';
     li.appendChild(avatar);
 
@@ -255,31 +190,3 @@ function addUser(user) {
 
     document.getElementById("userList").appendChild(li);
 }
-
-/*
-function addUser(ev) {
-    ev.preventDefault(); //Abschicken des Formulars
-    const user = {
-        user: document.getElementById('nickname').value
-    }
-    const b = JSON.stringify({
-        nickname: document.getElementById('nickname').value
-    })
-
-    fetch('http://localhost:5001/api/Users', {
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        method: 'POST',
-        body: b
-    }).then(data => console.log(data));
-
-    users.push(user);
-    document.forms[0].reset();
-
-    localStorage.setItem('UserList', JSON.stringify(user));
-}
-*/
-
-
