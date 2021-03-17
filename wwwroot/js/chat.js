@@ -62,16 +62,16 @@ function getUsersById(id) {
     return users.find(user => user.id === id).nickname;
 }
 
-function getMessagesByUserId(userId){
+function getMessagesByUserId(userId) {
     return messages.filter(message => message.user_id === userId)
 }
 
-//TODO Die Messages müssen jeweils per Id gelöscht werden
-function getMessageByMessages(userId){
-    const userMessages = getMessagesByUserId(userId)
-    /*userMessages.forEach(message => {
-        message.id;
-    });*/
+function messageDelete(user) {
+    for (let i = 0; i < messages.length; i++) {
+        if (messages[i].user_id === user.id) {
+            document.getElementById(messages[i].id).remove();
+        }
+    }
 }
 
 //Messages auf Chat.html anzeigen
@@ -151,11 +151,12 @@ function handleMessage(input) {
             break;
         case 'user_deleted':
             const element = document.getElementById(jsonObject.data.id);
+            const elementUser = document.getElementById(jsonObject.data);
             const getMessage = getMessagesByUserId(element);
 
             if (element) {
                 element.remove();
-                getMessage.remove();
+                messageDelete(elementUser);
             }
             // Delete his/hers messages
             break;

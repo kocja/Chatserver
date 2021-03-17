@@ -18,9 +18,6 @@ function getUserById(userId) {
         : Promise.reject('userId mustn\'t be empty');
 }
 
-function getMessagesByUserId(userId){
-    getUserById(userId)
-}
 
 function createUser(nickName) {
     const body = {
